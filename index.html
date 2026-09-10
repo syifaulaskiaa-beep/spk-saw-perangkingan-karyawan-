@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPK Pemilihan Karyawan Terbaik - Metode SAW</title>
+    <link rel="stylesheet" href="spk.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>🏢 SPK Karyawan Terbaik</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" onclick="scrollToSection('home')">Beranda</a></li>
+                <li><a href="#tentang" onclick="scrollToSection('tentang')">Tentang</a></li>
+                <li><a href="#metode" onclick="scrollToSection('metode')">Metode SAW</a></li>
+                <li><a href="#kalkulator" onclick="scrollToSection('kalkulator')">Kalkulator</a></li>
+                <li><a href="#kontak" onclick="scrollToSection('kontak')">Kontak</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Sistem Pendukung Keputusan</h2>
+                <p>Pemilihan Karyawan Terbaik Menggunakan Metode SAW</p>
+                <button class="btn btn-primary" onclick="scrollToSection('kalkulator')">Mulai Sekarang</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="tentang" class="about">
+        <div class="container">
+            <h2 class="section-title">Tentang Sistem Ini</h2>
+            <div class="about-grid">
+                <div class="about-card">
+                    <h3>📋 Definisi</h3>
+                    <p>Sistem Pendukung Keputusan (SPK) adalah suatu sistem yang membantu pengambil keputusan dalam memilih alternatif terbaik dari berbagai pilihan yang tersedia dengan menggunakan metode dan analisis yang terstruktur.</p>
+                </div>
+                <div class="about-card">
+                    <h3>🎯 Tujuan</h3>
+                    <p>Membantu perusahaan dalam mengidentifikasi dan memilih karyawan terbaik berdasarkan kriteria-kriteria yang telah ditentukan secara objektif dan transparan.</p>
+                </div>
+                <div class="about-card">
+                    <h3>✅ Manfaat</h3>
+                    <p>Memberikan keputusan yang lebih akurat, objektif, dan dapat dipertanggungjawabkan dalam proses seleksi karyawan, sehingga meningkatkan kualitas sumber daya manusia perusahaan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Metode SAW Section -->
+    <section id="metode" class="metode">
+        <div class="container">
+            <h2 class="section-title">Metode Simple Additive Weighting (SAW)</h2>
+            
+            <div class="metode-content">
+                <div class="metode-info">
+                    <h3>Apa itu Metode SAW?</h3>
+                    <p>Simple Additive Weighting (SAW) adalah metode yang paling terkenal dan sering digunakan dalam sistem pendukung keputusan multi-kriteria. Metode ini merupakan teknik pengambilan keputusan yang menggunakan rating skala numerik dalam memperhitungkan nilai bobot atribut dari setiap kriteria.</p>
+
+                    <h3 style="margin-top: 30px;">Langkah-langkah Metode SAW:</h3>
+                    <ol class="steps-list">
+                        <li>
+                            <strong>Menentukan Kriteria dan Bobot</strong>
+                            <p>Tentukan semua kriteria yang digunakan dan berikan bobot untuk masing-masing kriteria berdasarkan kepentingannya.</p>
+                        </li>
+                        <li>
+                            <strong>Normalisasi Matriks</strong>
+                            <p>Melakukan normalisasi matriks keputusan dengan menggunakan rumus normalisasi sesuai dengan jenis kriteria (benefit atau cost).</p>
+                        </li>
+                        <li>
+                            <strong>Perhitungan Skor Preferensi</strong>
+                            <p>Menghitung skor preferensi untuk setiap alternatif dengan menjumlahkan hasil perkalian elemen matriks ternormalisasi dengan bobot kriteria.</p>
+                        </li>
+                        <li>
+                            <strong>Perangkingan</strong>
+                            <p>Mengurutkan alternatif berdasarkan skor preferensi yang diperoleh dari yang tertinggi ke terendah.</p>
+                        </li>
+                    </ol>
+
+                    <h3 style="margin-top: 30px;">Rumus Perhitungan:</h3>
+                    <div class="formula-box">
+                        <p><strong>Normalisasi (Benefit):</strong></p>
+                        <p class="formula">r<sub>ij</sub> = X<sub>ij</sub> / max(X<sub>ij</sub>)</p>
+                        
+                        <p><strong>Normalisasi (Cost):</strong></p>
+                        <p class="formula">r<sub>ij</sub> = min(X<sub>ij</sub>) / X<sub>ij</sub></p>
+                        
+                        <p><strong>Skor Preferensi:</strong></p>
+                        <p class="formula">V<sub>i</sub> = Σ (w<sub>j</sub> × r<sub>ij</sub>)</p>
+                        
+                        <p style="font-size: 0.9em; margin-top: 15px;">Keterangan:</p>
+                        <ul style="font-size: 0.9em;">
+                            <li>r<sub>ij</sub> = Rating ternormalisasi</li>
+                            <li>X<sub>ij</sub> = Nilai kriteria ke-j pada alternatif ke-i</li>
+                            <li>w<sub>j</sub> = Bobot kriteria ke-j</li>
+                            <li>V<sub>i</sub> = Skor preferensi alternatif ke-i</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section id="kalkulator" class="kalkulator">
+        <div class="container">
+            <h2 class="section-title">Kalkulator SPK Karyawan Terbaik</h2>
+            
+            <div class="calculator-wrapper">
+                <!-- Tab Navigation -->
+                <div class="tabs">
+                    <button class="tab-btn active" onclick="switchTab('setup')">1. Setup Kriteria</button>
+                    <button class="tab-btn" onclick="switchTab('data')">2. Input Data</button>
+                    <button class="tab-btn" onclick="switchTab('hasil')">3. Hasil Analisis</button>
+                </div>
+
+                <!-- Tab 1: Setup Kriteria -->
+                <div id="setup" class="tab-content active">
+                    <h3>Pengaturan Kriteria Seleksi</h3>
+                    <div id="criteriaList" class="criteria-list">
+                        <!-- Default criteria will be added here -->
+                    </div>
+                    
+                    <div class="button-group">
+                        <button class="btn btn-secondary" onclick="addCriteria()">+ Tambah Kriteria</button>
+                        <button class="btn btn-success" onclick="switchTab('data')">Lanjut ke Input Data</button>
+                    </div>
+                </div>
+
+                <!-- Tab 2: Input Data Karyawan -->
+                <div id="data" class="tab-content">
+                    <h3>Input Data Karyawan</h3>
+                    <div id="employeeForm"></div>
+                    
+                    <div class="button-group">
+                        <button class="btn btn-secondary" onclick="addEmployee()">+ Tambah Karyawan</button>
+                    </div>
+
+                    <div class="button-group" style="margin-top: 20px;">
+                        <button class="btn btn-back" onclick="switchTab('setup')">Kembali</button>
+                        <button class="btn btn-success" onclick="calculateSAW()">Hitung Hasil</button>
+                    </div>
+                </div>
+
+                <!-- Tab 3: Hasil Analisis -->
+                <div id="hasil" class="tab-content">
+                    <h3>Hasil Analisis SAW</h3>
+                    
+                    <div class="hasil-section">
+                        <h4>Matriks Ternormalisasi</h4>
+                        <div id="normalizedMatrix" class="table-container"></div>
+                    </div>
+
+                    <div class="hasil-section">
+                        <h4>Perhitungan Skor Preferensi</h4>
+                        <div id="scoreCalculation" class="table-container"></div>
+                    </div>
+
+                    <div class="hasil-section">
+                        <h4>Hasil Perangkingan</h4>
+                        <div id="ranking" class="table-container"></div>
+                    </div>
+
+                    <div class="button-group" style="margin-top: 20px;">
+                        <button class="btn btn-secondary" onclick="downloadResult()">📥 Download Hasil</button>
+                        <button class="btn btn-back" onclick="switchTab('data')">Kembali</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="kontak" class="contact">
+        <div class="container">
+            <h2 class="section-title">Hubungi Kami</h2>
+            <div class="contact-content">
+                <div class="contact-card">
+                    <h3>📧 Email</h3>
+                    <p>info@spkkaryawan.com</p>
+                </div>
+                <div class="contact-card">
+                    <h3>📱 Telepon</h3>
+                    <p>+62 812 3456 7890</p>
+                </div>
+                <div class="contact-card">
+                    <h3>📍 Alamat</h3>
+                    <p>Jl. Contoh No. 123, Kota Contoh</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Sistem Pendukung Keputusan Pemilihan Karyawan Terbaik. Semua hak cipta dilindungi.</p>
+            <p>Menggunakan Metode SAW (Simple Additive Weighting)</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
